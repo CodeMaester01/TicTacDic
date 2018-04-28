@@ -1,5 +1,6 @@
 package Tic.gui;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -24,11 +25,14 @@ public class GUI implements Observer {
 		_driver = driv;
 		_th = new TurnHandler();
 		State[][] stateBoard = b.getBoard();
+		
 		JPanel board = new JPanel();
-		for(int i = 0; i < 9; i++) {
-			JButton addy = new JButton("");
-			//buttonActionListener listener = buttonActionListener(_th.getPlayerTurn());
-			//addy.addActionListener(listener);
+		board.setLayout(new GridLayout(3,3));
+		for(int row = 0; row < 3; row++) {
+			for(int col = 0; col < 3; col++) {
+				LocationButton temp = new LocationButton(row,col, b);
+				board.add(temp.getButton());
+			}
 		}
 		
 	}

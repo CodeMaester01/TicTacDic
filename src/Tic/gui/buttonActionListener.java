@@ -3,22 +3,23 @@ package Tic.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Tic.game.Board;
 import Tic.game.State;
 
 public class buttonActionListener implements ActionListener {
 	
-	public State _state;
-	public buttonActionListener(State st) {
-		_state = st;
+	private Board board;
+	private LocationButton button;
+	
+	public buttonActionListener(Board board, LocationButton button) {
+		this.board = board;
+		this.button = button;
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		//set();
+		int row = button.getRow(); int col = button.getCol();
+		
+		button.setButton();
+		board.setTile(row, col);
 	}
-	
-	public JButton set() {
-		//if(_button)
-	}
-	
 }
