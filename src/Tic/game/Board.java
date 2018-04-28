@@ -55,6 +55,4 @@ public class Board {
 		
 		return State.BLANK;
 	}
-	
-	
 }

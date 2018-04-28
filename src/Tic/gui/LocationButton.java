@@ -11,12 +11,12 @@ public class LocationButton {
 	private int col;
 	private JButton button;
 	
-	public LocationButton(int r, int c, Board b) {
+	public LocationButton(int r, int c, Board b, GUI gui) {
 		locState = State.BLANK;
 		row = r;
 		col = c;
 		button = new JButton();
-		button.addActionListener(new buttonActionListener(b, this));
+		button.addActionListener(new buttonActionListener(b, this, gui));
 	}
 	
 	/**

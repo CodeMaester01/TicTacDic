@@ -10,10 +10,12 @@ public class buttonActionListener implements ActionListener {
 	
 	private Board board;
 	private LocationButton button;
+	private GUI _gui;
 	
-	public buttonActionListener(Board board, LocationButton button) {
+	public buttonActionListener(Board board, LocationButton button, GUI gui) {
 		this.board = board;
 		this.button = button;
+		_gui = gui;
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
@@ -21,5 +23,6 @@ public class buttonActionListener implements ActionListener {
 		board.getTurnHandle().changeTurn();
 		button.setButton();
 		board.setTile(row, col);
+		_gui.update();
 	}
 }
