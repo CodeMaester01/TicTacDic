@@ -33,10 +33,10 @@ public class LocationButton {
 			button.setText("");
 		case X:
 			button.setText("X");
-			button.setEnabled(false);
+			button.setEnabled(false);break;
 		case O:
 			button.setText("O");
-			button.setEnabled(false);
+			button.setEnabled(false);break;
 		}
 	}
 	

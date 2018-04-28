@@ -15,11 +15,12 @@ import Tic.game.State;
 import Tic.game.TurnHandler;
 
 
-public class GUI implements Observer {
+public class GUI{
 
 	private Board _b;
 	private driver _driver;
 	private TurnHandler _th;
+	private JPanel _gamePanel;
 	private JFrame _window;
 	
 	public GUI(Board b, driver driv, JFrame window) {
@@ -27,28 +28,17 @@ public class GUI implements Observer {
 		_driver = driv;
 		_th = new TurnHandler();
 		_window = window;
+		_gamePanel = new JPanel();
 	}
 	
 	public JPanel setBoard() {
-		JPanel board = new JPanel();
-		board.setLayout(new GridLayout(3,3));
+		_gamePanel.setLayout(new GridLayout(3,3));
 		for(int row = 0; row < 3; row++) {
 			for(int col = 0; col < 3; col++) {
 				LocationButton temp = new LocationButton(row,col, _b,this);
-				board.add(temp.getButton());
+				_gamePanel.add(temp.getButton());
 			}
 		}
-		return(board);
-	}
-	
-	public void update() {
-		// TODO Auto-generated method stub
-		_window.pack();
-		_window.setVisible(true);
-	}
-
-	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		
+		return _gamePanel;
 	}
 }

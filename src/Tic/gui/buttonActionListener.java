@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import Tic.game.Board;
 import Tic.game.State;
+import Tic.game.TurnHandler;
 
 public class buttonActionListener implements ActionListener {
 	
@@ -19,10 +20,12 @@ public class buttonActionListener implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
+		TurnHandler t = board.getTurnHandle();
 		int row = button.getRow(); int col = button.getCol();
-		board.getTurnHandle().changeTurn();
+		
+		button.setState(t.getPlayerTurn());
 		button.setButton();
 		board.setTile(row, col);
-		_gui.update();
+		t.changeTurn();
 	}
 }

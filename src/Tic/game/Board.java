@@ -3,11 +3,9 @@ package Tic.game;
 public class Board {
 	private State[][] board;
 	private TurnHandler turnHandle;
-	private State currentTurn;
 
 	public Board(TurnHandler t) {
 		board = new State[3][3];
-		currentTurn = t.getPlayerTurn();
 		turnHandle = t;
 	}
 	
@@ -19,12 +17,13 @@ public class Board {
 		return turnHandle;
 	}
 	
+	
 	public State getTile(int row,int col) {
 		return board[row][col];
 	}
 	
 	public void setTile(int row, int col) {
-		board[row][col] = currentTurn;
+		board[row][col] = turnHandle.getPlayerTurn();
 	}
 	
 	
