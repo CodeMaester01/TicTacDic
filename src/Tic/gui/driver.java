@@ -22,8 +22,6 @@ public class driver implements Runnable {
 	
 	public void run() {
 		_mainWindow = new JFrame();
-		_boardPanel = new JPanel();
-		_mainWindow.add(_boardPanel);
 		_gui = new GUI(_b,this);
 		
 		_mainWindow.pack();
