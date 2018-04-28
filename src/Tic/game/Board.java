@@ -36,4 +36,16 @@ public class Board {
 		return count;
 	}
 	
+	
+	/**
+	 * 
+	 * 
+	 * @return X if X has won, O if O has won and Blank if there is not currently a winner
+	 */
+	public State winner() {
+		
+		return State.BLANK;
+	}
+	
+	
 }
