@@ -1,5 +1,6 @@
 package Tic.gui;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,6 +30,7 @@ public class GUI{
 		_th = new TurnHandler();
 		_window = window;
 		_gamePanel = new JPanel();
+		_gamePanel.setPreferredSize(new Dimension(500,500));
 	}
 	
 	public JPanel setBoard() {
