@@ -2,15 +2,21 @@ package Tic.game;
 
 public class Board {
 	private State[][] board;
+	private TurnHandler turnHandle;
 	private State currentTurn;
 
 	public Board(TurnHandler t) {
 		board = new State[3][3];
 		currentTurn = t.getPlayerTurn();
+		turnHandle = t;
 	}
 	
 	public State[][] getBoard() {
 		return board;
+	}
+	
+	public TurnHandler getTurnHandle() {
+		return turnHandle;
 	}
 	
 	public State getTile(int row,int col) {
@@ -20,6 +26,8 @@ public class Board {
 	public void setTile(int row, int col) {
 		board[row][col] = currentTurn;
 	}
+	
+	
 	
 	/**
 	 * Returns the number of empty spaces on the board. This is used to determine the number of future game states.

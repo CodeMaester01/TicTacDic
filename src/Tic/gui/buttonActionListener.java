@@ -18,7 +18,7 @@ public class buttonActionListener implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 		int row = button.getRow(); int col = button.getCol();
-		
+		board.getTurnHandle().changeTurn();
 		button.setButton();
 		board.setTile(row, col);
 	}
