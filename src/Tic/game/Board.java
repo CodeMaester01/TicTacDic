@@ -45,13 +45,48 @@ public class Board {
 	}
 	
 	
-	/**
-	 * 
-	 * 
-	 * @return X if X has won, O if O has won and Blank if there is not currently a winner
-	 */
-	public State winner() {
-		
-		return State.BLANK;
+	public boolean checkWin(State a) {
+		int count = 0;
+		for(int r = 0; r < 3; r++) {
+			for(int c = 0; c < 3; c++) {
+				if(board[r][c] == a)
+					count++;
+				else
+					break;
+				if(count == 3)
+					return true;
+			}
+			count = 0;
+		}
+		count = 0;
+		for(int r = 0; r < 3; r++) {
+			for(int c = 0; c < 3; c++) {
+				if(board[c][r] == a)
+					count++;
+				else
+					break;
+				if(count == 3)
+					return true;
+			}
+			count = 0;
+		}
+		count = 0;
+		for(int i = 0; i<3; i++) {
+			if(board[i][i] == a)
+				count++;
+			else
+				break;
+			if(count == 3)
+				return true;
+		}
+		for(int i = 0; i<3; i++) {
+			if(board[i][2-i] == a)
+				count++;
+			else
+				break;
+			if(count == 3)
+				return true;
+		}
+		return false;
 	}
 }
