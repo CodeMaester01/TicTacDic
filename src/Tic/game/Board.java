@@ -1,5 +1,6 @@
 package Tic.game;
 
 public class Board {
-//plz help
+private State[][] board;
+
 }
