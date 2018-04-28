@@ -28,7 +28,7 @@ public class GUI implements Observer {
 		for(int i = 0; i < 9; i++) {
 			JButton addy = new JButton("");
 			//buttonActionListener listener = buttonActionListener(_th.getPlayerTurn());
-			addy.addActionListener(listener);
+			//addy.addActionListener(listener);
 		}
 		
 	}
